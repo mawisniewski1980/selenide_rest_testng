@@ -26,7 +26,7 @@
     <googleguava.version>29.0-jre</googleguava.version>
     <assertj.version>3.16.1</assertj.version>
     <jfairy.version>0.5.9</jfairy.version>
-    <log4j.version>2.3</log4j.version>
+    <log4j.version>2.13.3</log4j.version>
   </properties>
 
   <profiles>

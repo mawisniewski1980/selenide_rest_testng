@@ -2,16 +2,19 @@ package org.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.testng.ScreenShooter;
 import org.abstracts.AbstractTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.enums.PageUrls.GOOGLE_SEARCH;
 
+@Listeners({ScreenShooter.class})
 public class GoogleSearch_IT extends AbstractTest {
 
-    GoogleSearchPage google;
+    private GoogleSearchPage google;
 
     @BeforeMethod
     public void setUp() {
