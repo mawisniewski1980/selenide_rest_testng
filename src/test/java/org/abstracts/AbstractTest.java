@@ -5,6 +5,9 @@ import org.testng.annotations.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static org.config.SelenideConfig.cleanUp;
+import static org.config.SelenideConfig.setUp;
+
 @Listeners(Listener.class)
 public abstract class AbstractTest {
 
@@ -14,6 +17,7 @@ public abstract class AbstractTest {
     @BeforeSuite(alwaysRun = true)
     public static void beforeSuite() {
         LOG.info("beforeSuite");
+        setUp();
     }
 
     @BeforeClass(alwaysRun = true)
@@ -29,5 +33,6 @@ public abstract class AbstractTest {
     @AfterSuite(alwaysRun = true)
     public static void afterSuite() {
         LOG.info("afterSuite");
+        cleanUp();
     }
 }

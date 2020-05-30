@@ -1,6 +1,7 @@
 package org.config;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 
 import static com.codeborne.selenide.Browsers.CHROME;
 
@@ -18,5 +19,10 @@ public class SelenideConfig {
         Configuration.startMaximized = true;
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 8000;
+    }
+
+    public static void cleanUp() {
+        Selenide.clearBrowserCookies();
+        Selenide.clearBrowserLocalStorage();
     }
 }

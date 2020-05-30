@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="GOOGLE" verbose="2" parallel="methods" thread-count="10">
+
+    <groups>
+        <run>
+            <exclude name="GOOGLE" />
+            <exclude name="REMOTE" />
+            <exclude name="LOCAL" />
+        </run>
+    </groups>
+
+    <test name="Test profil google">
+        <classes>
+           <class name="org.pages.GoogleSearch_IT" />
+        </classes>
+    </test>
+</suite>
