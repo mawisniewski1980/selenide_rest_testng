@@ -27,17 +27,13 @@ public class AppLocal_IT extends AbstractTest {
 
     @Test(groups = {"LOCAL"})
     public void test4() {
-        LOG.info("TEST4: LOCAL");
-        LOG.info("ENV: " + System.getProperty("env"));
-        LOG.info("Thread LOCAL " + Thread.currentThread().getId());
+        LOG.info(String.format("Group: %s, env: %s, thread: %s", "LOCAL", System.getProperty("env"), Thread.currentThread().getId()));
         assertThat(true).isTrue();
     }
 
     @Test(groups = {"LOCAL"})
     public void test5() {
-        LOG.info("TEST5: LOCAL");
-        LOG.info("ENV: " + System.getProperty("env"));
-        LOG.info("Thread LOCAL " + Thread.currentThread().getId());
+        LOG.info(String.format("Group: %s, env: %s, thread: %s", "LOCAL", System.getProperty("env"), Thread.currentThread().getId()));
         assertThat(true).isTrue();
     }
 
