@@ -1,15 +1,15 @@
 package org.apis;
 
-import org.dto.StudentDTOReq;
-import org.dto.StudentDTORsp;
+import org.dto.StudentReq;
+import org.dto.StudentRsp;
 import org.enums.EndpointsUrls;
 import org.interfaces.ReqRspInt;
 
-public class StudentApi implements ReqRspInt<StudentDTOReq, StudentDTORsp> {
+public class StudentApi implements ReqRspInt<StudentReq, StudentRsp> {
 
     private String url;
-    private StudentDTOReq req = new StudentDTOReq();
-    private StudentDTORsp rsp;
+    private StudentReq req = new StudentReq();
+    private StudentRsp rsp;
 
     public StudentApi() {
         this.url = EndpointsUrls.STUDENT_API_ID.toString();
@@ -25,31 +25,31 @@ public class StudentApi implements ReqRspInt<StudentDTOReq, StudentDTORsp> {
     }
 
     @Override
-    public StudentDTOReq getReq() {
+    public StudentReq getReq() {
         return req;
     }
 
     @Override
-    public StudentDTORsp getRsp() {
+    public StudentRsp getRsp() {
         return rsp;
     }
 
     @Override
-    public Class<StudentDTOReq> getReqClass() {
-        return StudentDTOReq.class;
+    public Class<StudentReq> getReqClass() {
+        return StudentReq.class;
     }
 
     @Override
-    public Class<StudentDTORsp> getRspClass() {
-        return StudentDTORsp.class;
+    public Class<StudentRsp> getRspClass() {
+        return StudentRsp.class;
     }
 
-    private void setResponse(StudentDTORsp response) {
+    private void setResponse(StudentRsp response) {
         this.rsp = response;
     }
 
     @Override
     public void setRsp(Object rsp) {
-        this.setResponse((StudentDTORsp) rsp);
+        this.setResponse((StudentRsp) rsp);
     }
 }

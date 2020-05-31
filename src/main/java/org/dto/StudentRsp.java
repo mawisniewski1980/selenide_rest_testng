@@ -7,7 +7,7 @@ import java.util.List;
 
 @Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
-public class StudentDTORsp {
+public class StudentRsp {
 
     @SerializedName("courses")
     private List<String> courses;
@@ -22,7 +22,7 @@ public class StudentDTORsp {
     @SerializedName("programme")
     private String programme;
 
-    public StudentDTORsp(List<String> courses, String email, String firstName, Long id, String lastName, String programme) {
+    public StudentRsp(List<String> courses, String email, String firstName, Long id, String lastName, String programme) {
         this.courses = courses;
         this.email = email;
         this.firstName = firstName;

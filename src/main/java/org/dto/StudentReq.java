@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
-public class StudentDTOReq {
+public class StudentReq {
 
     @SerializedName("limit")
     private Long limit;
