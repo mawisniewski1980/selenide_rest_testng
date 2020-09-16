@@ -4,15 +4,15 @@
 
     <groups>
         <run>
-            <exclude name="GOOGLE" />
-            <exclude name="REMOTE" />
-            <exclude name="LOCAL" />
+            <include name="GOOGLE"/>
+            <exclude name="REMOTE"/>
+            <exclude name="LOCAL"/>
         </run>
     </groups>
 
     <test name="Test profil google">
         <classes>
-           <class name="org.pages.GoogleSearch_IT" />
+            <class name="org.pages.GoogleSearch_IT"/>
         </classes>
     </test>
 </suite>

@@ -4,14 +4,15 @@
 
     <groups>
         <run>
-            <include name="LOCAL" />
-            <exclude name="REMOTE" />
+            <include name="LOCAL"/>
+            <exclude name="REMOTE"/>
+            <exclude name="GOOGLE"/>
         </run>
     </groups>
 
     <test name="Test profil local">
         <classes>
-           <class name="org.example.AppLocal_IT" />
+            <class name="org.example.AppLocal_IT"/>
         </classes>
     </test>
 </suite>
