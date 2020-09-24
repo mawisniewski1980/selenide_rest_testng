@@ -7,6 +7,7 @@ import org.abstracts.AbstractTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.tools.Tools;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.enums.PageUrls.GOOGLE_SEARCH;
@@ -25,6 +26,7 @@ public class GoogleSearch_IT extends AbstractTest {
     @Test
     public void googleTest1() {
         google.search("selenide");
+        Tools.closePopUp();
         assertThat(google.getResults()).isNotEmpty();
     }
 
