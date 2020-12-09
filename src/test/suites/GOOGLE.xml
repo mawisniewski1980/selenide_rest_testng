@@ -12,7 +12,7 @@
 
     <test name="Test profil google">
         <classes>
-            <class name="org.pages.GoogleSearch_IT"/>
+            <class name="org.web.controller.GoogleSearch_IT"/>
         </classes>
     </test>
 </suite>
