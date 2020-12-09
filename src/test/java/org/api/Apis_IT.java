@@ -16,14 +16,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Apis_IT extends BaseApiTest {
 
-    @Test
+    @Test(testName = "testApi1", groups = {"API"})
     public void testApi1() {
         Response rsp = RestSrv.getResp(GOOGLE_SEARCH.getUrl());
         //rsp.prettyPrint();
         assertThat(200).isEqualTo(rsp.statusCode());
     }
 
-    @Test
+    @Test(testName = "testApi2", groups = {"API"})
     public void testApi2() {
         Response rsp = RestSrv.getResp("http://localhost:8080/");
         rsp.prettyPrint();
@@ -31,7 +31,7 @@ public class Apis_IT extends BaseApiTest {
         assertThat("Welcome! This is a demo application.").isEqualTo(rsp.getBody().jsonPath().get("msg"));
     }
 
-    @Test
+    @Test(testName = "testApi3", groups = {"API"})
     public void testApi3() {
         Map map = ImmutableMap.of("programme", "Computer Science", "limit", 1);
         Response rsp = RestSrv.getResp(STUDENT_API_LIST.toString(), map);
@@ -39,7 +39,7 @@ public class Apis_IT extends BaseApiTest {
         assertThat(rsp).isNotNull();
     }
 
-    @Test
+    @Test(testName = "testApi4", groups = {"API"})
     public void testApi4() {
         Map map = ImmutableMap.of("id", 1);
         StudentApi studentApi = new StudentApi();

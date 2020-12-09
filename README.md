@@ -1,4 +1,3 @@
+##### mvn clean -PAPI verify
 
-##### mvn clean -PREMOTE verify
-##### mvn clean -PLOCAL verify
-##### mvn clean -PGOOGLE verify
+##### mvn clean -PWEB verify

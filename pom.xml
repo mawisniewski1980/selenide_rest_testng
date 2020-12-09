@@ -33,27 +33,20 @@
 
     <profiles>
         <profile>
-            <id>LOCAL</id>
+            <id>API</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <env>LOCAL</env>
-                <suiteXmlFile>src/test/suites/LOCAL.xml</suiteXmlFile>
+                <env>API</env>
+                <suiteXmlFile>src/test/suites/api.xml</suiteXmlFile>
             </properties>
         </profile>
         <profile>
-            <id>REMOTE</id>
+            <id>WEB</id>
             <properties>
-                <env>REMOTE</env>
-                <suiteXmlFile>src/test/suites/REMOTE.xml</suiteXmlFile>
-            </properties>
-        </profile>
-        <profile>
-            <id>GOOGLE</id>
-            <properties>
-                <env>GOOGLE</env>
-                <suiteXmlFile>src/test/suites/GOOGLE.xml</suiteXmlFile>
+                <env>WEB</env>
+                <suiteXmlFile>src/test/suites/web.xml</suiteXmlFile>
             </properties>
         </profile>
     </profiles>
