@@ -13,11 +13,11 @@ public abstract class BaseTest {
 
     @BeforeSuite(alwaysRun = true)
     public static void beforeSuite() {
-        LOG.info("beforeSuite");
+        LOG.info("BEFORESUITE: {}, {}", BaseTest.class.getName(), Thread.currentThread().getId());
     }
 
     @AfterSuite(alwaysRun = true)
     public static void afterSuite() {
-        LOG.info("afterSuite");
+        LOG.info("AFTERSUITE: {}, {}", BaseTest.class.getName(), Thread.currentThread().getId());
     }
 }
