@@ -3,7 +3,7 @@ package org.web.components.googlesearch.elements;
 public enum GoogleSearchElement {
 
     INPUT("//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input"),
-    LIST_VALUES("#search .rc h3"),
+    LIST_VALUES("#res h3 span"),
     AGREE_BUTTON("//*[@id=\"introAgreeButton\"]/span/span");
 
     private final String selector;

@@ -2,7 +2,7 @@ package org.api.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import java.util.List;
 
 @Generated("net.hexar.json2pojo")
