@@ -2,17 +2,18 @@ package org;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.thread.components.FirstComponent;
 import org.thread.factory.ComponentFactory;
+
 
 public abstract class BaseThreadTest extends BaseTest {
 
-    protected FirstComponent firstComponent;
-    private ComponentFactory factory;
+    private final ComponentFactory factory = new ComponentFactory();
 
     public BaseThreadTest() {
-        factory = new ComponentFactory();
-        initComponents();
+    }
+
+    protected ComponentFactory getFactory() {
+        return factory;
     }
 
     @BeforeClass(alwaysRun = true)
@@ -25,7 +26,4 @@ public abstract class BaseThreadTest extends BaseTest {
         LOG.info("AFTERCLASS: {}, {}", BaseThreadTest.class.getName(), Thread.currentThread().getId());
     }
 
-    private void initComponents() {
-        firstComponent = factory.getFirstComponent();
-    }
 }

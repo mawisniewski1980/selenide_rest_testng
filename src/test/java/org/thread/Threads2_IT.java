@@ -3,17 +3,22 @@ package org.thread;
 import org.BaseThreadTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.thread.components.FirstComponent;
 
 public class Threads2_IT extends BaseThreadTest {
+
+    FirstComponent firstComponent;
 
     @BeforeMethod(alwaysRun = true)
     public void beforeMethod() {
         LOG.info("BEFOREMETHOD: {}, {}", Threads2_IT.class.getName(), Thread.currentThread().getId());
+        firstComponent = getFactory().getFirstComponent();
     }
 
     @BeforeMethod(alwaysRun = true)
     public void afterMethod() {
         LOG.info("AFTERMETHOD: {}, {}", Threads2_IT.class.getName(), Thread.currentThread().getId());
+        threads.clearAll();
     }
 
     @Test(groups = "THREAD")

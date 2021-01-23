@@ -4,13 +4,23 @@ import org.thread.factory.BaseAction;
 
 public class FirstComponentAction {
 
-    private BaseAction baseAction;
+    private final BaseAction baseAction;
+    private int value = 10;
 
-    public FirstComponentAction(BaseAction baseAction) {
+    FirstComponentAction(BaseAction baseAction) {
         this.baseAction = baseAction;
     }
 
-    public void printSomenthing2(String text, Class clas) {
+    void printSomenthing2(String text, Class clas) {
         baseAction.printSomething(text, clas);
+    }
+
+    public int getValue(int add) {
+        addValue(add);
+        return value;
+    }
+
+    private void addValue(int add) {
+        value = value + add;
     }
 }
