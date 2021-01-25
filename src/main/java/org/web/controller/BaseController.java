@@ -7,10 +7,10 @@ import org.web.actions.BaseActions;
 public abstract class BaseController {
 
     protected static final Logger LOG = LoggerFactory.getLogger("Logger");
-    protected ControllerFactory controllerFactory;
     protected BaseActions baseActions = new BaseActions();
+    private FactoryController factoryController;
 
-    public BaseController(ControllerFactory controllerFactory) {
-        this.controllerFactory = controllerFactory;
+    public BaseController(FactoryController factoryController) {
+        this.factoryController = factoryController;
     }
 }

@@ -2,9 +2,9 @@ package org.web.controller;
 
 import org.web.components.googlesearch.controller.GoogleSearchController;
 
-public class ControllerFactory {
+public final class FactoryController {
 
-    public ControllerFactory() {
+    public FactoryController() {
     }
 
     public GoogleSearchController newGoogleSearchController() {

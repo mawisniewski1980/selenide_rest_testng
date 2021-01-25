@@ -1,4 +1,4 @@
-package org.web.config;
+package org.config;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;

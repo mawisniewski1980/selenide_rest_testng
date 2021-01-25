@@ -5,18 +5,17 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.web.components.googlesearch.controller.GoogleSearchController;
-import org.web.controller.ControllerFactory;
+import org.web.controller.FactoryController;
 
 @Listeners({ScreenShooter.class})
 public abstract class BaseWebTest extends BaseTest {
 
     protected GoogleSearchController googleSearchController;
-    private ControllerFactory controllerFactory;
+    private FactoryController factoryController = new FactoryController();
 
     @BeforeClass(alwaysRun = true)
     public void beforeClass() {
         LOG.info("beforeClass");
-        controllerFactory = new ControllerFactory();
         initControllers();
     }
 
@@ -26,6 +25,6 @@ public abstract class BaseWebTest extends BaseTest {
     }
 
     private void initControllers() {
-        googleSearchController = controllerFactory.newGoogleSearchController();
+        googleSearchController = factoryController.newGoogleSearchController();
     }
 }
