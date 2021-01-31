@@ -14,13 +14,12 @@ public abstract class BaseTest {
     protected static Threads threads = Threads.getInstance();
 
     @BeforeSuite(alwaysRun = true)
-    public static void beforeSuite() {
+    protected static void beforeSuite() {
         LOG.info("BEFORESUITE: {}, {}", BaseTest.class.getName(), Thread.currentThread().getId());
     }
 
     @AfterSuite(alwaysRun = true)
-    public static void afterSuite() {
+    protected static void afterSuite() {
         LOG.info("AFTERSUITE: {}, {}", BaseTest.class.getName(), Thread.currentThread().getId());
-        threads.clearAll();
     }
 }

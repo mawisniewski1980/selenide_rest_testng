@@ -14,13 +14,13 @@ public abstract class BaseWebTest extends BaseTest {
     private FactoryController factoryController = new FactoryController();
 
     @BeforeClass(alwaysRun = true)
-    public void beforeClass() {
+    protected void beforeClass() {
         LOG.info("beforeClass");
         initControllers();
     }
 
     @AfterClass(alwaysRun = true)
-    public void afterClass() {
+    protected void afterClass() {
         LOG.info("afterClass");
     }
 

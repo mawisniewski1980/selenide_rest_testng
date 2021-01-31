@@ -6,12 +6,12 @@ import org.testng.annotations.BeforeClass;
 public abstract class BaseApiTest extends BaseTest {
 
     @BeforeClass(alwaysRun = true)
-    public void beforeClass() {
+    protected void beforeClass() {
         LOG.info("beforeClass");
     }
 
     @AfterClass(alwaysRun = true)
-    public void afterClass() {
+    protected void afterClass() {
         LOG.info("afterClass");
     }
 }
