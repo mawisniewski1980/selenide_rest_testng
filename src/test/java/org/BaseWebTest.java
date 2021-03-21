@@ -10,6 +10,7 @@ import org.web.controller.FactoryController;
 @Listeners({ScreenShooter.class})
 public abstract class BaseWebTest extends BaseTest {
 
+    protected boolean headless = true;
     protected GoogleSearchController googleSearchController;
     private FactoryController factoryController = new FactoryController();
 

@@ -2,10 +2,8 @@ package org.api.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-import javax.annotation.processing.Generated;
 import java.util.List;
 
-@Generated("net.hexar.json2pojo")
 @SuppressWarnings("unused")
 public class StudentRsp {
 

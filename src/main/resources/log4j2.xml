@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
 
+    <Properties>
+        <Property name="basePath">target/logs/</Property>
+        <Property name="basePattern">%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Property>
+    </Properties>
+
     <Appenders>
 
-        <File name="logFile" fileName="target/logs/app.log">
+        <!--<File name="logFile" fileName="target/logs/app.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
+        </File>-->
+
+        <RollingFile
+                name="logFile"
+                fileName="${basePath}/app.log"
+                filePattern="${basePath}/app.%d{dd-MMM}.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout>
+                <Pattern>${basePattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <OnStartupTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5 MB"/>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+        </RollingFile>
 
         <Console name="logToConsole" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="${basePattern}"/>
         </Console>
 
     </Appenders>

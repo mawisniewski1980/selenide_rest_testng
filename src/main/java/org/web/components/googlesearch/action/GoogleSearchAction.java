@@ -1,6 +1,9 @@
 package org.web.components.googlesearch.action;
 
-import org.web.actions.BaseActions;
+import com.codeborne.selenide.ElementsCollection;
+import org.openqa.selenium.By;
+import org.web.components.googlesearch.data.GoogleSearchData;
+import org.web.controller.BaseActions;
 
 import static org.web.components.googlesearch.elements.GoogleSearchElement.*;
 
@@ -13,14 +16,22 @@ public class GoogleSearchAction {
     }
 
     public void search(String value) {
-        baseActions.setValueAndPressEnter(INPUT.getSelector(), value);
+        baseActions.setValueAndPressEnter(By.cssSelector(INPUT.getSelector()), value);
+    }
+
+    public ElementsCollection getResults() {
+        return baseActions.getElementsCollection(By.cssSelector(LIST_VALUES.getSelector()));
     }
 
     public boolean isResultsAreEmpty() {
-        return baseActions.getElementsCollection(LIST_VALUES.getSelector()).isEmpty();
+        return baseActions.getElementsCollection(By.cssSelector(LIST_VALUES.getSelector())).isEmpty();
     }
 
     public void closePopUp() {
-        baseActions.closePopUp(AGREE_BUTTON.getSelector(), 0);
+        baseActions.closePopUp(By.xpath(_AGREE_BUTTON.getSelector()), 0);
+    }
+
+    public GoogleSearchData getData() {
+        return new GoogleSearchData(baseActions.isElementDisplayed(By.cssSelector(INPUT.getSelector())));
     }
 }

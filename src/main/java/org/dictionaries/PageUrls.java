@@ -1,4 +1,4 @@
-package org.web.enums;
+package org.dictionaries;
 
 public enum PageUrls {
 
