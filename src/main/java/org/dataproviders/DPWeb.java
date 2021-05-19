@@ -1,13 +1,10 @@
 package org.dataproviders;
 
-import com.opencsv.CSVReader;
-import com.opencsv.exceptions.CsvValidationException;
 import org.testng.annotations.DataProvider;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Iterator;
+
+import static org.utils.FileLoader.loadCSVFile;
 
 public class DPWeb {
 
@@ -23,17 +20,5 @@ public class DPWeb {
         return loadCSVFile("src/test/resources/data.csv");
     }
 
-    private synchronized Iterator<Object[]> loadCSVFile(String pathWithFile) {
-        ArrayList<Object[]> myEntries = new ArrayList<>();
-        try {
-            CSVReader reader = new CSVReader(new FileReader(pathWithFile));
-            String[] nextLine = null;
-            while ((nextLine = reader.readNext()) != null) {
-                myEntries.add(new Object[]{nextLine});
-            }
-        } catch (CsvValidationException | IOException e) {
-            e.printStackTrace();
-        }
-        return myEntries.iterator();
-    }
+
 }
