@@ -35,7 +35,32 @@ public class DataProviderTest_IT extends BaseWebTest {
             dataProvider = "getCSVUrls",
             dataProviderClass = DPWeb.class)
     public void webTest2(String[] list) {
-        LOG.info(list[0] + " " + list[1] + " " + list[2]);
+        LOG.info(list[0]);
+        LOG.info(list[1]);
+        LOG.info(list[2]);
+        LOG.info("#########################");
+        //Selenide.open(url);
+    }
+
+    @Test(testName = "webTest3",
+            dataProvider = "getCSVUrls2",
+            dataProviderClass = DPWeb.class)
+    public void webTest3(String[] list) {
+        LOG.info(list[0]);
+        LOG.info(list[1]);
+        LOG.info(list[2]);
+        LOG.info("#########################");
+        //Selenide.open(url);
+    }
+
+    @Test(testName = "webTest4",
+            dataProvider = "getCSVUrls3",
+            dataProviderClass = DPWeb.class)
+    public void webTest4(String address, String number, String name) {
+        LOG.info(address);
+        LOG.info(number);
+        LOG.info(name);
+        LOG.info("#########################");
         //Selenide.open(url);
     }
 }
